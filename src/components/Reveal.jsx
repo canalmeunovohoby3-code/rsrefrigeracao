@@ -28,7 +28,7 @@ export default function Reveal({
     if (!element) return undefined
 
     const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
-    if (reduceMotion || !('IntersectionObserver' in window)) {
+    if (!('IntersectionObserver' in window)) {
       setVisible(true)
       return undefined
     }
@@ -47,7 +47,10 @@ export default function Reveal({
             }
           })
         },
-        { threshold: 0.1, rootMargin: '0px 0px -7% 0px' },
+        {
+          threshold: reduceMotion ? 0.04 : 0.1,
+          rootMargin: reduceMotion ? '0px 0px -2% 0px' : '0px 0px -7% 0px',
+        },
       )
 
       observer.observe(element)

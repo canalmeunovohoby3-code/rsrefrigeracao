@@ -565,9 +565,21 @@ p {
   }
 
   .reveal {
+    opacity: 0;
+    transform: translate3d(
+      calc(var(--reveal-x, 0px) * 0.5),
+      calc(var(--reveal-y, 28px) * 0.5),
+      0
+    );
+    transition-property: opacity, transform !important;
+    transition-duration: 560ms !important;
+    transition-timing-function: var(--ease) !important;
+    transition-delay: calc(var(--reveal-delay, 0ms) * 0.6) !important;
+  }
+
+  .reveal.is-visible {
     opacity: 1;
-    transform: none;
-    transition-delay: 0ms !important;
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 

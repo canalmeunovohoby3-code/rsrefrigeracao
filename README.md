@@ -196,7 +196,7 @@ As animações de entrada usam o componente `src/components/Reveal.jsx`, baseado
 - `src/styles/base.css` define os estados, as transições e os wrappers usados para animar cards sem interferir nos efeitos de hover.
 - Os cards de serviços, galeria, vídeos, diferenciais, depoimentos e áreas entram em sequência; mídias entram pelas laterais e a galeria usa zoom suave.
 - Cards e imagens têm elevação/zoom no hover, botões elevam e movem a seta, e ícones fazem microanimações.
-- Com `prefers-reduced-motion`, o conteúdo aparece imediatamente, sem deslocamentos e sem atraso. Se `IntersectionObserver` não estiver disponível, o componente também exibe o conteúdo imediatamente.
+- Com `prefers-reduced-motion`, o conteúdo ainda surge com um fade de 560 ms e deslocamento reduzido a 50% do original, sem zoom. Isso mantém a leitura confortável sem eliminar completamente a entrada dos cards. Se `IntersectionObserver` não estiver disponível, o componente exibe o conteúdo imediatamente.
 
 ---
 
@@ -229,7 +229,7 @@ As animações de entrada usam o componente `src/components/Reveal.jsx`, baseado
 
 ## 6. Testes realizados
 
-- Animações de entrada verificadas no navegador em desktop e mobile: os 59 elementos `Reveal` são revelados ao rolar (no mobile, o único restante é `display:none`), com variantes distintas, stagger real entre cards, digitação do hero intacta, hover de cards/imagens/botões e fallback sem `IntersectionObserver`.
+- Animações de entrada verificadas no navegador em desktop e mobile: os 59 elementos `Reveal` são revelados ao rolar (no mobile, o único restante é `display:none`), com variantes distintas, stagger real entre cards, digitação do hero intacta, hover de cards/imagens/botões e fallback sem `IntersectionObserver`. Também testado com `prefers-reduced-motion`: os cards continuam entrando com fade e deslocamento curto, sem ficar visíveis de uma vez.
 - `npm run lint` — sem erros.
 - `npm run build` — build de produção concluído.
 - Navegação e layout testados em larguras de **320, 360, 390, 430, 600, 768, 1024 e 1440 px**, sem rolagem horizontal.
