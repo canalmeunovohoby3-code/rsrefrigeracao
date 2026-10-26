@@ -1,0 +1,169 @@
+/* ---------- Diferenciais ---------- */
+
+.differentials {
+  background: var(--white);
+}
+
+.differentials-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 36px;
+  margin-bottom: 42px;
+}
+
+.differentials-head .section-heading {
+  max-width: 760px;
+}
+
+.differentials-aside {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  max-width: 318px;
+  padding-bottom: 5px;
+  color: var(--muted);
+}
+
+.differentials-aside .eyebrow-line {
+  margin-top: 9px;
+  flex: 0 0 auto;
+}
+
+.differentials-aside p {
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.differentials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.differential {
+  position: relative;
+  padding: 28px 23px 27px;
+  border-right: 1px solid var(--line);
+  transition: background-color 0.3s ease;
+}
+
+.differential:last-child {
+  border-right: 0;
+}
+
+.differential:hover {
+  background: var(--paper);
+}
+
+.differential-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.differential-icon {
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--orange-ink);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.differential:hover .differential-icon {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--orange);
+}
+
+.differential-index {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.1em;
+}
+
+.differential h3 {
+  max-width: 240px;
+  font-size: 0.96rem;
+  font-weight: 750;
+  line-height: 1.36;
+  letter-spacing: -0.02em;
+}
+
+.differential p {
+  max-width: 245px;
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 1050px) {
+  .differentials-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 32px;
+  }
+
+  .differentials-aside {
+    max-width: 420px;
+    padding-bottom: 0;
+  }
+
+  .differentials-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .differential {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .differential:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .differential:nth-child(n + 3) {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .differentials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .differential {
+    padding: 23px 18px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .differential:nth-child(n + 3) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .differential:last-child {
+    border-bottom: 0;
+  }
+
+  .differential-top {
+    margin-bottom: 17px;
+  }
+
+  .differential h3,
+  .differential p {
+    max-width: none;
+  }
+}

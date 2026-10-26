@@ -1,0 +1,234 @@
+/* ---------- Áreas de atendimento ---------- */
+
+.areas {
+  position: relative;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.areas::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(0, 25, 65, 0.14) 1px, transparent 1px);
+  background-size: 21px 21px;
+  -webkit-mask-image: radial-gradient(circle at 20% 55%, black, transparent 47%);
+  mask-image: radial-gradient(circle at 20% 55%, black, transparent 47%);
+  opacity: 0.24;
+  pointer-events: none;
+}
+
+.areas-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
+  align-items: start;
+  gap: clamp(40px, 6vw, 78px);
+}
+
+.areas-intro {
+  position: relative;
+}
+
+.areas-intro > *:not(.areas-radar) {
+  position: relative;
+  z-index: 1;
+}
+
+.areas-intro .section-heading h2 {
+  max-width: 460px;
+  text-wrap: pretty;
+}
+
+.areas-intro-copy {
+  max-width: 430px;
+  margin-top: 24px;
+}
+
+.areas-intro-copy > p {
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+.areas-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.areas-cta-note {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.areas-radar {
+  position: absolute;
+  left: -105px;
+  bottom: -115px;
+  z-index: 0;
+  width: 295px;
+  height: 295px;
+  border: 1px solid rgba(0, 25, 65, 0.07);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.areas-radar span {
+  position: absolute;
+  border: 1px solid rgba(0, 25, 65, 0.065);
+  border-radius: 50%;
+}
+
+.areas-radar span:nth-child(1) {
+  inset: 17%;
+}
+
+.areas-radar span:nth-child(2) {
+  inset: 34%;
+}
+
+.areas-radar span:nth-child(3) {
+  inset: 47%;
+  border-color: rgba(251, 109, 9, 0.24);
+}
+
+.areas-radar i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--orange-ink);
+  transform: translate(-50%, -50%);
+}
+
+.areas-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.area-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 205px;
+  padding: 19px 19px 17px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  transition:
+    transform 0.3s var(--ease),
+    border-color 0.3s ease,
+    box-shadow 0.3s var(--ease);
+}
+
+.area-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 25, 65, 0.17);
+  box-shadow: 0 18px 36px rgba(0, 25, 65, 0.07);
+}
+
+.area-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.area-code {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.13em;
+}
+
+.area-pin {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--orange-ink);
+}
+
+.area-region {
+  margin-top: 15px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.47rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.area-card h3 {
+  margin-top: 4px;
+  font-size: 1.14rem;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.area-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 13px;
+}
+
+.area-tags li {
+  padding: 4px 7px;
+  border: 1px solid #e7ecf1;
+  border-radius: 5px;
+  background: var(--paper);
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 1024px) {
+  .areas-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .areas-intro .section-heading h2 {
+    max-width: 620px;
+  }
+
+  .areas-intro-copy {
+    max-width: 560px;
+  }
+
+  .areas-radar {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .areas-list {
+    grid-template-columns: 1fr;
+    gap: 11px;
+  }
+
+  .area-card {
+    min-height: 0;
+  }
+
+  .areas-cta .btn {
+    width: 100%;
+  }
+
+  .area-card h3 {
+    font-size: 1.08rem;
+  }
+}

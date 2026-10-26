@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rsrefrigeracao.com.br/sitemap.xml

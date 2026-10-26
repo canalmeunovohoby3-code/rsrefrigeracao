@@ -1,0 +1,336 @@
+/* ---------- Vídeos ---------- */
+
+.videos {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: var(--section-y);
+  color: var(--white);
+  background:
+    radial-gradient(circle at 12% 10%, rgba(7, 53, 108, 0.42), transparent 38%),
+    var(--navy-900);
+}
+
+.videos-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+  background-size: 76px 76px;
+  -webkit-mask-image: radial-gradient(circle at 50% 25%, black, transparent 76%);
+  mask-image: radial-gradient(circle at 50% 25%, black, transparent 76%);
+  pointer-events: none;
+}
+
+.videos-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 42px;
+}
+
+.videos-head .section-heading {
+  max-width: 650px;
+}
+
+.videos-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  padding: 10px 13px;
+  border: 1px solid rgba(181, 191, 201, 0.2);
+  border-radius: 999px;
+  color: var(--steel);
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.videos-note svg {
+  color: var(--orange);
+}
+
+/* Cards horizontais com miniatura vertical, iguais entre si. */
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.video-card {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  align-items: stretch;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(181, 191, 201, 0.18);
+  border-radius: 18px;
+  background: #00152f;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.35s var(--ease);
+}
+
+.video-card:hover {
+  border-color: rgba(251, 109, 9, 0.4);
+  box-shadow: 0 24px 50px rgba(0, 5, 15, 0.32);
+}
+
+.video-poster {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: #000b1a;
+  color: var(--white);
+  text-align: left;
+}
+
+.video-poster:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: -3px;
+}
+
+.video-poster img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.9;
+  transition:
+    transform 0.9s var(--ease),
+    opacity 0.35s ease;
+}
+
+.video-poster:hover img,
+.video-poster:focus-visible img {
+  transform: scale(1.04);
+  opacity: 0.97;
+}
+
+.video-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 10, 24, 0.3), transparent 38%),
+    linear-gradient(0deg, rgba(0, 10, 24, 0.42), transparent 35%);
+  pointer-events: none;
+}
+
+.video-index {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+}
+
+.video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--navy-900);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 12px 32px rgba(251, 109, 9, 0.28);
+  transition:
+    background-color 0.25s ease,
+    transform 0.3s var(--ease);
+}
+
+.video-play svg {
+  margin-left: 3px;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 1.1;
+}
+
+.video-poster:hover .video-play,
+.video-poster:focus-visible .video-play {
+  background: var(--orange-bright);
+  transform: translate(-50%, -50%) scale(1.07);
+}
+
+.video-coming {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  background: rgba(0, 10, 24, 0.8);
+  color: rgba(255, 255, 255, 0.84);
+  font-family: var(--font-mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.video-coming .status-dot {
+  width: 5px;
+  height: 5px;
+}
+
+.video-corner {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 16px;
+  height: 16px;
+  border-right: 1px solid rgba(251, 109, 9, 0.8);
+  border-bottom: 1px solid rgba(251, 109, 9, 0.8);
+  pointer-events: none;
+}
+
+.video-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  padding: 22px 22px 18px;
+}
+
+.video-meta-copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.video-tag {
+  align-self: flex-start;
+  margin-bottom: 8px;
+  padding: 4px 7px;
+  border: 1px solid rgba(181, 191, 201, 0.18);
+  border-radius: 4px;
+  background: rgba(0, 8, 20, 0.4);
+  color: var(--steel);
+  font-family: var(--font-mono);
+  font-size: 0.47rem;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.video-meta h3 {
+  color: var(--white);
+  font-size: 1.04rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.33;
+}
+
+.video-meta p {
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 0.79rem;
+  line-height: 1.55;
+}
+
+.video-meta-arrow {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin-top: auto;
+  align-self: flex-end;
+  flex: 0 0 auto;
+  border: 1px solid rgba(181, 191, 201, 0.22);
+  border-radius: 50%;
+  color: var(--steel);
+  transition:
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s var(--ease);
+}
+
+.video-card:hover .video-meta-arrow {
+  border-color: rgba(251, 109, 9, 0.6);
+  color: var(--orange);
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 1080px) {
+  .videos-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .videos-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .video-card {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 560px) {
+  .video-card {
+    grid-template-columns: 130px minmax(0, 1fr);
+  }
+
+  .video-play {
+    width: 44px;
+    height: 44px;
+  }
+
+  .video-play svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .video-meta {
+    padding: 15px 14px 14px;
+  }
+
+  .video-meta h3 {
+    font-size: 0.96rem;
+  }
+
+  .video-meta p {
+    font-size: 0.75rem;
+  }
+
+  .video-tag {
+    font-size: 0.44rem;
+  }
+
+  .video-meta-arrow {
+    width: 28px;
+    height: 28px;
+  }
+
+  .videos-note {
+    font-size: 0.47rem;
+  }
+}

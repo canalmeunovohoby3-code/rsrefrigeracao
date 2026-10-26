@@ -1,0 +1,154 @@
+/* ---------- Chamada para orçamento ---------- */
+
+.cta-band {
+  padding-block: clamp(36px, 4.5vw, 58px);
+  background: var(--white);
+}
+
+.cta-panel {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.75fr);
+  align-items: center;
+  gap: 36px;
+  overflow: hidden;
+  padding: clamp(34px, 4.8vw, 62px);
+  border: 1px solid rgba(181, 191, 201, 0.17);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at 82% 20%, rgba(7, 53, 108, 0.5), transparent 46%),
+    linear-gradient(140deg, #001c46 0%, #001233 55%, #000b1b 100%);
+  box-shadow: 0 34px 70px rgba(0, 15, 36, 0.16);
+}
+
+.cta-art {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.cta-art svg {
+  width: 100%;
+  height: 100%;
+}
+
+.cta-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-copy h2 {
+  max-width: 660px;
+  color: var(--white);
+  font-size: clamp(1.9rem, 3.5vw, 3.15rem);
+  line-height: 1.04;
+  letter-spacing: -0.038em;
+  text-wrap: balance;
+}
+
+.cta-text {
+  max-width: 500px;
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.cta-action {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  justify-self: end;
+}
+
+.cta-action .btn {
+  text-align: left;
+}
+
+.cta-meta {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: 240px;
+  color: var(--steel);
+  font-family: var(--font-mono);
+  font-size: 0.49rem;
+  letter-spacing: 0.09em;
+  line-height: 1.55;
+  text-transform: uppercase;
+}
+
+.cta-meta .status-dot {
+  margin-top: 5px;
+}
+
+.cta-corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: var(--orange);
+  border-style: solid;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.cta-corner--tl {
+  top: 16px;
+  left: 16px;
+  border-width: 1px 0 0 1px;
+}
+
+.cta-corner--br {
+  right: 16px;
+  bottom: 16px;
+  border-width: 0 1px 1px 0;
+}
+
+@media (max-width: 1000px) {
+  .cta-panel {
+    grid-template-columns: 1fr;
+    gap: 27px;
+  }
+
+  .cta-action {
+    justify-self: start;
+  }
+
+  .cta-copy h2 {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cta-panel {
+    padding: 29px 20px 31px;
+    border-radius: 22px;
+  }
+
+  .cta-copy h2 {
+    font-size: clamp(1.8rem, 8.5vw, 2.2rem);
+  }
+
+  .cta-text {
+    font-size: 0.9rem;
+  }
+
+  .cta-action {
+    width: 100%;
+  }
+
+  .cta-action .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cta-meta {
+    max-width: none;
+  }
+}

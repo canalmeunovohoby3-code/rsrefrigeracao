@@ -1,0 +1,427 @@
+/* ---------- Apresentação ---------- */
+
+.about {
+  background: var(--white);
+  overflow: hidden;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: center;
+  gap: clamp(40px, 6.5vw, 90px);
+}
+
+.about-visual-wrap {
+  position: relative;
+}
+
+.about-visual {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+}
+
+.about-blueprint {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--paper-2);
+  box-shadow:
+    0 30px 70px rgba(0, 25, 65, 0.08),
+    0 2px 0 rgba(255, 255, 255, 0.8) inset;
+}
+
+.about-blueprint::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+}
+
+.about-blueprint-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(0, 25, 65, 0.09);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.53rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.about-blueprint-code {
+  color: var(--orange-ink);
+}
+
+.about-drawing {
+  width: 100%;
+  height: auto;
+}
+
+.about-badge {
+  position: absolute;
+  left: 20px;
+  bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 13px;
+  border: 1px solid rgba(0, 25, 65, 0.12);
+  border-radius: 10px;
+  background: var(--white);
+  box-shadow: 0 14px 30px rgba(0, 25, 65, 0.12);
+}
+
+.about-badge-number {
+  color: var(--orange-ink);
+  font-size: 1.6rem;
+  font-weight: 750;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+.about-badge-text {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.46rem;
+  letter-spacing: 0.1em;
+  line-height: 1.55;
+  text-transform: uppercase;
+}
+
+.about-badge svg {
+  margin-left: 2px;
+  color: var(--orange-ink);
+}
+
+.about-blueprint-caption {
+  position: absolute;
+  right: 18px;
+  bottom: 13px;
+  color: rgba(0, 25, 65, 0.65);
+  font-family: var(--font-mono);
+  font-size: 0.46rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.about-blueprint--brand {
+  border-color: rgba(181, 191, 201, 0.18);
+  background: var(--navy-900);
+  box-shadow:
+    0 30px 70px rgba(0, 25, 65, 0.18),
+    0 1px 0 rgba(255, 255, 255, 0.08) inset;
+}
+
+.about-blueprint--brand::after {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.about-blueprint--brand .about-blueprint-top {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.56);
+}
+
+.about-blueprint--brand .about-blueprint-code {
+  color: #ff9d5c;
+}
+
+.about-blueprint--brand .about-blueprint-caption {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.about-brand-stage {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 2.5vw, 19px);
+  aspect-ratio: 520 / 540;
+  padding: clamp(34px, 6vw, 52px) clamp(22px, 6vw, 50px) clamp(84px, 14vw, 108px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(8, 84, 180, 0.34), transparent 52%),
+    linear-gradient(155deg, var(--navy) 0%, var(--navy-900) 58%, #061c3c 100%);
+}
+
+.about-brand-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(181, 191, 201, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(181, 191, 201, 0.055) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.about-brand-orbit {
+  position: absolute;
+  left: 50%;
+  top: 43%;
+  z-index: -1;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.about-brand-orbit--one {
+  width: 84%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(181, 191, 201, 0.12);
+}
+
+.about-brand-orbit--two {
+  width: 59%;
+  aspect-ratio: 1;
+  border: 1px dashed rgba(251, 109, 9, 0.22);
+}
+
+.about-brand-glow {
+  position: absolute;
+  left: 50%;
+  top: 37%;
+  z-index: -1;
+  width: 52%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(251, 109, 9, 0.16), transparent 66%);
+  filter: blur(8px);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.about-brand-logo {
+  position: relative;
+  z-index: 1;
+  width: min(78%, 390px);
+  height: auto;
+  filter: drop-shadow(0 22px 38px rgba(0, 0, 0, 0.42));
+}
+
+.about-brand-rule {
+  position: relative;
+  z-index: 1;
+  width: 44px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--orange), transparent);
+}
+
+.about-brand-tagline {
+  position: relative;
+  z-index: 1;
+  max-width: 340px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.64);
+  font-family: var(--font-mono);
+  font-size: 0.53rem;
+  letter-spacing: 0.13em;
+  line-height: 1.75;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+.about-visual--photo {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+  box-shadow: var(--shadow-card);
+}
+
+.about-visual--photo img {
+  width: 100%;
+  aspect-ratio: 520 / 590;
+  object-fit: cover;
+}
+
+.about-photo-caption {
+  padding: 14px 18px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  border-top: 1px solid var(--line);
+  background: var(--white);
+}
+
+/* ---------- Conteúdo ---------- */
+
+.about-content {
+  max-width: 650px;
+}
+
+.about-title {
+  font-size: clamp(2rem, 3.7vw, 3.35rem);
+  line-height: 1.05;
+  letter-spacing: -0.038em;
+  text-wrap: balance;
+}
+
+.about-text {
+  max-width: 585px;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.about-text + .about-text {
+  margin-top: 12px;
+}
+
+.about-segments {
+  margin-top: 30px;
+  border-top: 1px solid var(--line);
+}
+
+.segment-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 15px;
+  padding: 17px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.segment-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  color: var(--navy);
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.segment-row:hover .segment-icon {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--orange);
+}
+
+.segment-copy h3 {
+  margin: 0;
+  font-size: 0.94rem;
+  font-weight: 750;
+  letter-spacing: -0.015em;
+}
+
+.segment-copy p {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.segment-index {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+}
+
+.about-signature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.about-signature-line {
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--orange);
+}
+
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 52px;
+  }
+
+  .about-visual {
+    max-width: 560px;
+    margin-inline: auto;
+  }
+
+  .about-content {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 560px) {
+  .about-blueprint-top {
+    padding: 12px 15px;
+    font-size: 0.47rem;
+  }
+
+  .about-badge {
+    left: 12px;
+    bottom: 14px;
+    padding: 9px 11px;
+  }
+
+  .about-badge-number {
+    font-size: 1.35rem;
+  }
+
+  .about-badge-text {
+    font-size: 0.41rem;
+  }
+
+  .about-blueprint-caption {
+    display: none;
+  }
+
+  .about-segments {
+    margin-top: 24px;
+  }
+
+  .segment-row {
+    gap: 12px;
+    padding: 15px 0;
+  }
+
+  .segment-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .segment-copy p {
+    font-size: 0.75rem;
+  }
+
+  .segment-index {
+    display: none;
+  }
+
+  .about-signature {
+    font-size: 0.5rem;
+    letter-spacing: 0.1em;
+  }
+}
