@@ -69,7 +69,7 @@ export default function About() {
   return (
     <section className="about section" id="sobre" aria-labelledby="about-title">
       <div className="container about-grid">
-        <Reveal className="about-visual-wrap">
+          <Reveal className="about-visual-wrap" variant="left">
           <AboutVisual />
         </Reveal>
 
@@ -85,7 +85,7 @@ export default function About() {
             </h2>
           </Reveal>
 
-          <Reveal delay={90}>
+          <Reveal delay={90} variant="up">
             <p className="about-text">
               A RS Refrigeração atua com serviços de instalação e manutenção de sistemas de
               climatização, atendendo demandas residenciais, comerciais e industriais.
@@ -96,7 +96,7 @@ export default function About() {
             </p>
           </Reveal>
 
-          <Reveal delay={140} className="about-segments">
+          <Reveal delay={140} className="about-segments" variant="fade">
             {site.segments.map((segment, index) => (
               <div className="segment-row" key={segment.id}>
                 <span className="segment-icon">
@@ -113,7 +113,7 @@ export default function About() {
             ))}
           </Reveal>
 
-          <Reveal delay={190} className="about-signature">
+          <Reveal delay={190} className="about-signature" variant="fade">
             <span className="about-signature-line" aria-hidden="true" />
             <span>Instalação · Manutenção · PMOC</span>
           </Reveal>

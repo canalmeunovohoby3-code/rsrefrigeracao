@@ -42,15 +42,18 @@
   border-bottom: 1px solid var(--line);
 }
 
+.differential-item {
+  border-right: 1px solid var(--line);
+}
+
+.differential-item:last-child {
+  border-right: 0;
+}
+
 .differential {
   position: relative;
   padding: 28px 23px 27px;
-  border-right: 1px solid var(--line);
   transition: background-color 0.3s ease;
-}
-
-.differential:last-child {
-  border-right: 0;
 }
 
 .differential:hover {
@@ -84,6 +87,14 @@
   background: var(--navy);
   border-color: var(--navy);
   color: var(--orange);
+}
+
+.differential-icon svg {
+  transition: transform 0.32s var(--ease);
+}
+
+.differential:hover .differential-icon svg {
+  transform: translateY(-1px) scale(1.08);
 }
 
 .differential-index {
@@ -126,15 +137,15 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .differential {
+  .differential-item {
     border-bottom: 1px solid var(--line);
   }
 
-  .differential:nth-child(2n) {
+  .differential-item:nth-child(2n) {
     border-right: 0;
   }
 
-  .differential:nth-child(n + 3) {
+  .differential-item:nth-child(n + 3) {
     border-bottom: 0;
   }
 }
@@ -144,18 +155,21 @@
     grid-template-columns: 1fr;
   }
 
-  .differential {
-    padding: 23px 18px;
+  .differential-item {
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
 
-  .differential:nth-child(n + 3) {
+  .differential-item:nth-child(n + 3) {
     border-bottom: 1px solid var(--line);
   }
 
-  .differential:last-child {
+  .differential-item:last-child {
     border-bottom: 0;
+  }
+
+  .differential {
+    padding: 23px 18px;
   }
 
   .differential-top {

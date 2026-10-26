@@ -286,6 +286,18 @@ p {
   flex: 0 0 auto;
 }
 
+.btn > svg:last-child {
+  transition: transform 0.24s var(--ease);
+}
+
+.btn:hover > svg:last-child {
+  transform: translate(2px, -2px);
+}
+
+.btn:active > svg:last-child {
+  transform: translate(1px, -1px);
+}
+
 .btn:hover {
   transform: translateY(-2px);
 }
@@ -362,7 +374,15 @@ p {
 .text-link:hover {
   color: var(--orange-ink);
   border-color: var(--orange-ink);
-  gap: 10px;
+  gap: 11px;
+}
+
+.text-link svg {
+  transition: transform 0.22s var(--ease);
+}
+
+.text-link:hover svg {
+  transform: translate(2px, -2px);
 }
 
 .status-dot {
@@ -390,16 +410,45 @@ p {
 
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translate3d(var(--reveal-x, 0px), var(--reveal-y, 28px), 0)
+    scale(var(--reveal-scale, 1));
   transition:
-    opacity 0.8s var(--ease),
-    transform 0.8s var(--ease);
+    opacity var(--reveal-duration, 760ms) var(--ease),
+    transform var(--reveal-duration, 760ms) var(--ease);
   transition-delay: var(--reveal-delay, 0ms);
+  backface-visibility: hidden;
 }
 
 .reveal.is-visible {
   opacity: 1;
-  transform: none;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.service-item,
+.video-item,
+.testimonial-item,
+.area-item,
+.differential-item {
+  display: flex;
+  min-width: 0;
+}
+
+.service-item > .service-card,
+.video-item > .video-card,
+.testimonial-item > .testimonial-card,
+.area-item > .area-card,
+.differential-item > .differential {
+  flex: 1;
+  width: 100%;
+}
+
+.gallery-reveal {
+  display: block;
+  min-width: 0;
+}
+
+.gallery-reveal > .gallery-item {
+  height: 100%;
 }
 
 @keyframes statusPulse {
@@ -518,6 +567,7 @@ p {
   .reveal {
     opacity: 1;
     transform: none;
+    transition-delay: 0ms !important;
   }
 }
 

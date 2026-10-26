@@ -136,6 +136,21 @@
   box-shadow: 0 18px 36px rgba(0, 25, 65, 0.07);
 }
 
+.area-pin {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s var(--ease);
+}
+
+.area-card:hover .area-pin {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--orange);
+  transform: translateY(-2px);
+}
+
 .area-card-head {
   display: flex;
   align-items: center;

@@ -96,7 +96,7 @@ export default function PhotoGallery() {
             description="Veja de perto os serviços e as soluções de climatização da RS Refrigeração."
             titleId="gallery-title"
           />
-          <Reveal delay={120} className="gallery-status">
+          <Reveal delay={120} className="gallery-status" variant="right">
             <span className="status-dot" aria-hidden="true" />
             <span>
               {hasPlaceholders ? (
@@ -112,13 +112,20 @@ export default function PhotoGallery() {
           </Reveal>
         </div>
 
-        <Reveal className="gallery-grid">
+        <div className="gallery-grid">
           {site.gallery.map((photo, index) => (
-            <GalleryTile key={photo.id} photo={photo} index={index} onOpen={setActiveIndex} />
+            <Reveal
+              key={photo.id}
+              className="gallery-reveal"
+              delay={index * 55}
+              variant="zoom"
+            >
+              <GalleryTile photo={photo} index={index} onOpen={setActiveIndex} />
+            </Reveal>
           ))}
-        </Reveal>
+        </div>
 
-        <Reveal className="gallery-foot" delay={80}>
+        <Reveal className="gallery-foot" delay={80} variant="fade">
           <p>
             {hasPlaceholders
               ? hasRealPhotos

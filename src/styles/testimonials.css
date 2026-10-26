@@ -192,11 +192,23 @@
   background: linear-gradient(160deg, #041d3d 0%, #02132a 100%);
   transition:
     border-color 0.3s ease,
-    background-color 0.3s ease;
+    background-color 0.3s ease,
+    transform 0.35s var(--ease),
+    box-shadow 0.35s var(--ease);
 }
 
 .testimonial-card:hover {
   border-color: rgba(251, 109, 9, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 46px rgba(0, 5, 15, 0.28);
+}
+
+.testimonial-avatar {
+  transition: transform 0.3s var(--ease);
+}
+
+.testimonial-card:hover .testimonial-avatar {
+  transform: translateY(-2px) scale(1.04);
 }
 
 .testimonial-top {

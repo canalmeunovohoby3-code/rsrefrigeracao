@@ -44,7 +44,7 @@ export default function Testimonials() {
             titleId="testimonials-title"
           />
 
-          <Reveal delay={110} className="testimonials-head-mark">
+          <Reveal delay={110} className="testimonials-head-mark" variant="right">
             <span className="testimonials-head-line" aria-hidden="true" />
             <span className="testimonials-head-text">
               Depoimentos de clientes
@@ -55,7 +55,7 @@ export default function Testimonials() {
         </div>
 
         <div className="testimonials-layout">
-          <Reveal className="rating-summary">
+          <Reveal className="rating-summary" variant="left">
             <span className="rating-label">Avaliações de clientes</span>
 
             <div className="rating-score-row">
@@ -85,42 +85,44 @@ export default function Testimonials() {
             {site.testimonials.map((testimonial, index) => (
               <Reveal
                 key={testimonial.id}
-                as="article"
-                className="testimonial-card"
-                delay={index * 70}
+                className="testimonial-item"
+                delay={index * 85}
+                variant="up"
               >
-                <div className="testimonial-top">
-                  <Stars
-                    rating={testimonial.rating}
-                    label={`${testimonial.rating} de 5 estrelas`}
-                  />
-                  {testimonial.price ? (
-                    <span className="testimonial-price">{testimonial.price}</span>
-                  ) : null}
-                </div>
-
-                <blockquote className="testimonial-quote">{testimonial.quote}</blockquote>
-
-                {testimonial.service ? (
-                  <span className="testimonial-service">{testimonial.service}</span>
-                ) : null}
-
-                <div className="testimonial-author">
-                  <span className="testimonial-avatar" aria-hidden="true">
-                    {testimonial.initials}
-                  </span>
-                  <span className="testimonial-author-copy">
-                    <strong>{testimonial.name}</strong>
-                    <span>Cliente RS Refrigeração</span>
-                  </span>
-                </div>
-
-                {testimonial.reply ? (
-                  <div className="testimonial-reply">
-                    <span className="testimonial-reply-label">Resposta da RS Refrigeração</span>
-                    <p>{testimonial.reply}</p>
+                <article className="testimonial-card">
+                  <div className="testimonial-top">
+                    <Stars
+                      rating={testimonial.rating}
+                      label={`${testimonial.rating} de 5 estrelas`}
+                    />
+                    {testimonial.price ? (
+                      <span className="testimonial-price">{testimonial.price}</span>
+                    ) : null}
                   </div>
-                ) : null}
+
+                  <blockquote className="testimonial-quote">{testimonial.quote}</blockquote>
+
+                  {testimonial.service ? (
+                    <span className="testimonial-service">{testimonial.service}</span>
+                  ) : null}
+
+                  <div className="testimonial-author">
+                    <span className="testimonial-avatar" aria-hidden="true">
+                      {testimonial.initials}
+                    </span>
+                    <span className="testimonial-author-copy">
+                      <strong>{testimonial.name}</strong>
+                      <span>Cliente RS Refrigeração</span>
+                    </span>
+                  </div>
+
+                  {testimonial.reply ? (
+                    <div className="testimonial-reply">
+                      <span className="testimonial-reply-label">Resposta da RS Refrigeração</span>
+                      <p>{testimonial.reply}</p>
+                    </div>
+                  ) : null}
+                </article>
               </Reveal>
             ))}
           </div>

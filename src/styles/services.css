@@ -119,6 +119,15 @@
   color: var(--orange);
 }
 
+.service-icon svg {
+  transition: transform 0.35s var(--ease);
+}
+
+.service-card:hover .service-icon svg,
+.service-card:focus-within .service-icon svg {
+  transform: scale(1.08) rotate(-3deg);
+}
+
 .service-number {
   color: #9aa8b6;
   font-family: var(--font-mono);

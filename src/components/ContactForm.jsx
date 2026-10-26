@@ -123,7 +123,7 @@ export default function ContactForm() {
   return (
     <section className="contact section" id="contato" aria-labelledby="contact-title">
       <div className="container contact-grid">
-        <Reveal className="contact-aside">
+        <Reveal className="contact-aside" variant="left">
           <div className="contact-aside-inner">
             <span className="contact-aside-glow" aria-hidden="true" />
             <p className="eyebrow eyebrow--light">
@@ -198,7 +198,7 @@ export default function ContactForm() {
           </div>
         </Reveal>
 
-        <Reveal className="contact-form-card" delay={100}>
+        <Reveal className="contact-form-card" delay={100} variant="right">
           <div className="form-head">
             <div>
               <span className="form-kicker">Formulário de contato</span>

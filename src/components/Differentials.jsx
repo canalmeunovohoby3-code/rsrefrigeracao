@@ -14,7 +14,7 @@ export default function Differentials() {
             title="Compromisso com o funcionamento do seu ambiente"
             titleId="differentials-title"
           />
-          <Reveal delay={100} className="differentials-aside">
+          <Reveal delay={100} className="differentials-aside" variant="right">
             <span className="eyebrow-line" aria-hidden="true" />
             <p>
               Atendimento para diferentes demandas de climatização, com foco no
@@ -27,18 +27,20 @@ export default function Differentials() {
           {site.differentials.map((item, index) => (
             <Reveal
               key={item.title}
-              className="differential"
-              delay={index * 70}
-              as="article"
+              className="differential-item"
+              delay={index * 65}
+              variant="up"
             >
-              <div className="differential-top">
-                <span className="differential-icon">
-                  <Icon name={item.icon} size={24} />
-                </span>
-                <span className="differential-index">{String(index + 1).padStart(2, '0')}</span>
-              </div>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
+              <article className="differential">
+                <div className="differential-top">
+                  <span className="differential-icon">
+                    <Icon name={item.icon} size={24} />
+                  </span>
+                  <span className="differential-index">{String(index + 1).padStart(2, '0')}</span>
+                </div>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
             </Reveal>
           ))}
         </div>

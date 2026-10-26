@@ -38,7 +38,7 @@ export default function IndustrialSection() {
             </p>
           </Reveal>
 
-          <Reveal delay={130}>
+          <Reveal delay={130} variant="fade">
             <ul className="industrial-list">
               {highlights.map((item) => (
                 <li key={item}>
@@ -51,7 +51,7 @@ export default function IndustrialSection() {
             </ul>
           </Reveal>
 
-          <Reveal delay={180} className="industrial-actions">
+          <Reveal delay={180} className="industrial-actions" variant="fade">
             <a
               className="btn btn-primary"
               href={whatsappUrl(site.messages.industrial)}
@@ -65,7 +65,7 @@ export default function IndustrialSection() {
           </Reveal>
         </div>
 
-        <Reveal delay={120} className="industrial-media">
+        <Reveal delay={120} className="industrial-media" variant="right">
           <figure className="industrial-figure">
             {image ? (
               <img

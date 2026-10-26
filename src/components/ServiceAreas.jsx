@@ -15,7 +15,7 @@ export default function ServiceAreas() {
             titleId="areas-title"
           />
 
-          <Reveal delay={90} className="areas-intro-copy">
+          <Reveal delay={90} className="areas-intro-copy" variant="left">
             <p>
               Atendemos bairros do Rio de Janeiro e municípios da Baixada Fluminense. Consulte a
               disponibilidade de atendimento para sua região.
@@ -46,23 +46,25 @@ export default function ServiceAreas() {
           {site.serviceAreas.map((group, index) => (
             <Reveal
               key={group.id}
-              className="area-card"
-              delay={index * 65}
-              as="article"
+              className="area-item"
+              delay={index * 70}
+              variant="right"
             >
-              <div className="area-card-head">
-                <span className="area-code">{group.code}</span>
-                <span className="area-pin">
-                  <Icon name="MapPin" size={18} />
-                </span>
-              </div>
-              <p className="area-region">{group.region}</p>
-              <h3>{group.zone}</h3>
-              <ul className="area-tags">
-                {group.areas.map((area) => (
-                  <li key={area}>{area}</li>
-                ))}
-              </ul>
+              <article className="area-card">
+                <div className="area-card-head">
+                  <span className="area-code">{group.code}</span>
+                  <span className="area-pin">
+                    <Icon name="MapPin" size={18} />
+                  </span>
+                </div>
+                <p className="area-region">{group.region}</p>
+                <h3>{group.zone}</h3>
+                <ul className="area-tags">
+                  {group.areas.map((area) => (
+                    <li key={area}>{area}</li>
+                  ))}
+                </ul>
+              </article>
             </Reveal>
           ))}
         </div>

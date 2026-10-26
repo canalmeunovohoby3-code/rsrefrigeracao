@@ -7,7 +7,7 @@ export default function CtaBanner() {
   return (
     <section className="cta-band" aria-labelledby="cta-title">
       <div className="container">
-        <Reveal className="cta-panel">
+        <Reveal className="cta-panel" variant="zoom">
           <div className="cta-art" aria-hidden="true">
             <svg viewBox="0 0 900 420" preserveAspectRatio="xMidYMid slice" focusable="false">
               <defs>

@@ -15,7 +15,7 @@ export default function Services() {
             description="Instalação e manutenção para diferentes sistemas de climatização e refrigeração."
             titleId="services-title"
           />
-          <Reveal delay={120} className="services-aside">
+          <Reveal delay={120} className="services-aside" variant="right">
             <span className="services-aside-label">Precisa de orientação?</span>
             <a
               href={whatsappUrl()}
@@ -33,28 +33,30 @@ export default function Services() {
           {site.services.map((service, index) => (
             <Reveal
               key={service.id}
-              delay={(index % 4) * 70}
-              className="service-card"
-              as="article"
+              delay={index * 55}
+              className="service-item"
+              variant="up"
             >
-              <div className="service-card-top">
-                <span className="service-icon">
-                  <Icon name={service.icon} size={26} />
-                </span>
-                <span className="service-number">{String(index + 1).padStart(2, '0')}</span>
-              </div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              <a
-                className="service-link"
-                href={whatsappUrl(site.messages.service(service.message))}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Solicitar orçamento para ${service.title} pelo WhatsApp`}
-              >
-                Solicitar orçamento
-                <Icon name="ArrowUpRight" size={16} />
-              </a>
+              <article className="service-card">
+                <div className="service-card-top">
+                  <span className="service-icon">
+                    <Icon name={service.icon} size={26} />
+                  </span>
+                  <span className="service-number">{String(index + 1).padStart(2, '0')}</span>
+                </div>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <a
+                  className="service-link"
+                  href={whatsappUrl(site.messages.service(service.message))}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Solicitar orçamento para ${service.title} pelo WhatsApp`}
+                >
+                  Solicitar orçamento
+                  <Icon name="ArrowUpRight" size={16} />
+                </a>
+              </article>
             </Reveal>
           ))}
         </div>
