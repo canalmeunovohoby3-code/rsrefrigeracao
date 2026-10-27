@@ -17,8 +17,9 @@ export default function Differentials() {
           <Reveal delay={100} className="differentials-aside" variant="right">
             <span className="eyebrow-line" aria-hidden="true" />
             <p>
-              Atendimento para diferentes demandas de climatização, com foco no
-              funcionamento dos equipamentos.
+              Com experiência e compromisso com a qualidade, buscamos solucionar problemas com
+              agilidade, segurança e eficiência, contribuindo para o melhor desempenho e maior
+              durabilidade dos equipamentos.
             </p>
           </Reveal>
         </div>
