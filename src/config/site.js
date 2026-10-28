@@ -161,25 +161,25 @@ export const site = {
       icon: 'House',
       title: 'Atendimento residencial, comercial e industrial',
       description:
-        'Soluções adequadas à rotina e à escala de cada tipo de ambiente.',
+        'Soluções adequadas a cada ambiente, com foco no bom funcionamento dos equipamentos e nas necessidades de cada cliente.',
     },
     {
       icon: 'Settings2',
       title: 'Instalação e manutenção de sistemas de climatização',
       description:
-        'Serviços voltados ao funcionamento adequado dos equipamentos.',
+        'Instalação e serviços técnicos realizados com atenção aos detalhes, buscando eficiência, segurança e durabilidade.',
     },
     {
       icon: 'ShieldCheck',
-      title: 'Manutenção preventiva e corretiva',
+      title: 'Manutenção preventiva, corretiva e higienização',
       description:
-        'Acompanhamento periódico e atendimento a equipamentos com falhas.',
+        'Prevenção de falhas, higienização, identificação de problemas e redução de paradas inesperadas para evitar transtornos e gastos desnecessários.',
     },
     {
       icon: 'MapPin',
       title: 'Rio de Janeiro e Baixada Fluminense',
       description:
-        'Consulte a disponibilidade de atendimento para o seu bairro.',
+        'Da Zona Sul à Baixada Fluminense, o compromisso é o mesmo: qualidade, cuidado técnico e excelência em cada serviço realizado.',
     },
   ],
 
