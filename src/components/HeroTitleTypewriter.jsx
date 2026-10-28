@@ -1,7 +1,14 @@
 import { useEffect, useState } from 'react'
 
-const FULL_TITLE = 'Climatização eficiente. Desempenho em cada ambiente.'
-const LINES = ['Climatização', 'eficiente.', 'Desempenho em', 'cada ambiente.']
+const FULL_TITLE =
+  'Refrigeração & Climatização eficiente. Desempenho em cada ambiente.'
+const LINES = [
+  'Refrigeração &',
+  'Climatização',
+  'eficiente.',
+  'Desempenho em',
+  'cada ambiente.',
+]
 
 const LINE_STARTS = []
 let characterCount = 0
@@ -28,10 +35,12 @@ function TypedTitle({ visibleCount }) {
         {typedLines[1]}
         <br />
         {typedLines[2]}
+        <br />
+        {typedLines[3]}
       </span>
       <span className="hero-title-line">
-        <span className={`hero-title-em${typedLines[3] ? ' has-text' : ''}`}>
-          {typedLines[3]}
+        <span className={`hero-title-em${typedLines[4] ? ' has-text' : ''}`}>
+          {typedLines[4]}
         </span>
       </span>
     </span>
@@ -84,6 +93,8 @@ export default function HeroTitleTypewriter() {
       <span className="sr-only">{FULL_TITLE}</span>
       <span className="hero-title-measure" aria-hidden="true">
         <span className="hero-title-silver">
+          Refrigeração &
+          <br />
           Climatização
           <br />
           eficiente.
