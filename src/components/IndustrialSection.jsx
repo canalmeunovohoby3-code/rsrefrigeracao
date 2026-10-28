@@ -28,7 +28,9 @@ export default function IndustrialSection() {
               <span className="eyebrow-index">03</span>
               <span>Industrial e comercial</span>
             </p>
-            <h2 id="industrial-title">Climatização para operações que exigem desempenho</h2>
+            <h2 id="industrial-title">
+              Refrigeração & Climatização para operações que exigem desempenho
+            </h2>
           </Reveal>
 
           <Reveal delay={80}>
