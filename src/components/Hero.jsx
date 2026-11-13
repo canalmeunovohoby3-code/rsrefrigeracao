@@ -85,7 +85,7 @@ export default function Hero() {
             <p className="hero-systems">
               Trabalhamos com ar condicionado Split - Chiller - Fancoil - Câmara frigorífica.
             </p>
-            <p className="hero-alert">
+            <p className="hero-alert" id="aviso-geladeiras">
               <Icon name="Ban" size={15} />
               <span>NÃO TRABALHAMOS COM GELADEIRAS</span>
               <Icon name="Ban" size={15} />
