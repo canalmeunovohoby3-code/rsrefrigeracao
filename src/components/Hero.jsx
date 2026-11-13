@@ -81,9 +81,16 @@ export default function Hero() {
             </ul>
           </div>
 
-          <p className="hero-systems">
-            Trabalhamos com ar condicionado Split - Chiller - Fancoil - Câmara frigorífica.
-          </p>
+          <div className="hero-systems-block">
+            <p className="hero-alert">
+              <Icon name="Ban" size={14} />
+              <span>NÃO TRABALHAMOS COM GELADEIRAS</span>
+              <Icon name="Ban" size={14} />
+            </p>
+            <p className="hero-systems">
+              Trabalhamos com ar condicionado Split - Chiller - Fancoil - Câmara frigorífica.
+            </p>
+          </div>
         </div>
 
         {hasPhotoBackground ? null : <HeroVisual />}

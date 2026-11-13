@@ -362,16 +362,70 @@
   background: var(--orange);
 }
 
-.hero-systems {
-  max-width: 620px;
-  margin: 10px 0 0;
-  color: rgba(255, 255, 255, 0.56);
-  font-family: var(--font-mono);
-  font-size: 0.56rem;
-  letter-spacing: 0.12em;
-  line-height: 1.7;
-  text-transform: uppercase;
+.hero-systems-block {
+  max-width: 640px;
+  margin: 12px 0 0;
   animation: heroRise 0.8s 0.36s var(--ease) both;
+}
+
+.hero-alert {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  max-width: 100%;
+  margin: 0 0 9px;
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 209, 102, 0.5);
+  border-radius: 999px;
+  background: rgba(255, 209, 102, 0.09);
+  color: #ffd166;
+  font-family: var(--font-sans);
+  font-size: clamp(0.6rem, 0.85vw, 0.66rem);
+  font-weight: 800;
+  letter-spacing: 0.055em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  animation: heroAlertPulse 2.4s ease-in-out infinite;
+}
+
+.hero-alert span {
+  min-width: 0;
+  text-align: center;
+}
+
+.hero-alert svg {
+  flex: 0 0 auto;
+  filter: drop-shadow(0 0 5px rgba(255, 209, 102, 0.35));
+}
+
+.hero-systems {
+  max-width: 640px;
+  margin: 0;
+  color: var(--orange-bright);
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.55;
+  text-transform: uppercase;
+  text-shadow: 0 0 18px rgba(251, 109, 9, 0.2);
+}
+
+@keyframes heroAlertPulse {
+  0%,
+  100% {
+    background: rgba(255, 209, 102, 0.07);
+    border-color: rgba(255, 209, 102, 0.38);
+    box-shadow: 0 0 0 0 rgba(255, 209, 102, 0);
+    color: #ffd166;
+  }
+  50% {
+    background: rgba(255, 209, 102, 0.16);
+    border-color: rgba(255, 209, 102, 0.95);
+    box-shadow: 0 0 22px 0 rgba(255, 209, 102, 0.22);
+    color: #fff0b8;
+  }
 }
 
 /* ---------- Visual hero ---------- */
@@ -820,6 +874,31 @@
 
   .hero-eyebrow .status-dot {
     display: none;
+  }
+
+  .hero-systems-block {
+    width: 100%;
+    max-width: 360px;
+    margin: 14px auto 0;
+    padding: 12px 14px 14px;
+    border: 1px solid rgba(255, 127, 36, 0.32);
+    border-radius: 14px;
+    background:
+      linear-gradient(135deg, rgba(251, 109, 9, 0.12), rgba(0, 25, 65, 0.32)),
+      rgba(0, 8, 20, 0.24);
+    box-shadow:
+      0 14px 34px rgba(0, 8, 20, 0.26),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    text-align: center;
+  }
+
+  .hero-alert {
+    margin: 0 auto 10px;
+    text-align: center;
+  }
+
+  .hero-systems {
+    text-align: center;
   }
 
   .hero-title {
