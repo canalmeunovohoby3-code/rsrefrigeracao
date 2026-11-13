@@ -40,8 +40,10 @@ export default function Hero() {
       <div className={`container hero-inner${hasPhotoBackground ? ' hero-inner--photo' : ''}`}>
         <div className="hero-copy">
           <p className="hero-eyebrow">
-            <span className="status-dot" aria-hidden="true" />
-            Refrigeração e climatização
+            <span className="hero-eyebrow-text">
+              <span className="status-dot" aria-hidden="true" />
+              ESPECIALISTA EM INSTALAÇÃO E MANUTENÇÃO DE AR CONDICIONADO
+            </span>
           </p>
 
           <h1 id="hero-title" className="hero-title">
@@ -49,8 +51,8 @@ export default function Hero() {
           </h1>
 
           <p className="hero-lede">
-            Soluções em instalação e manutenção de sistemas de climatização para ambientes
-            residenciais, comerciais e industriais no Rio de Janeiro e região.
+            Soluções em instalação e manutenção de sistemas de ar condicionado para ambientes
+            residências, comerciais e manutenção preventiva e corretiva para ambientes industriais.
           </p>
 
           <div className="hero-actions">
@@ -78,6 +80,10 @@ export default function Hero() {
               ))}
             </ul>
           </div>
+
+          <p className="hero-systems">
+            Trabalhamos com ar condicionado Split - Chiller - Fancoil - Câmara frigorífica.
+          </p>
         </div>
 
         {hasPhotoBackground ? null : <HeroVisual />}
